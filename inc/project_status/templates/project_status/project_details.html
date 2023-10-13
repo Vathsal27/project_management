@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Project Name: {{project.project_title}}
+        <br>
+        Project ID: {{project.project_id}}
+        <br>
+        Project visits: {{project.visits}}
+        <br>
+        <a href="{% url 'home' %}">Home</a>
+        <br>
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="project_visit_add" value="{{project.project_id}}">
+                <h1>+</h1>
+            </button>
+            <button type="submit" name="project_visit_sub" value="{{project.project_id}}">
+                <h1>-</h1>
+            </button>
+            <input type="checkbox" name="status" id="status">
+            <button type="submit" name="submit" id="sendData">Submit</button>
+        </form>
+    </h1>
+
+    <!-- <script>
+        document.getElementById('sendData').addEventListener('click', function () {
+            var checkbox = document.getElementById('status');
+            var isChecked = checkbox.checked; // Check if the checkbox is checked
+    
+            // Use AJAX or Fetch API to send the boolean value to the Django view
+            // Here, I'm using Fetch API as an example
+            fetch('{% url 'project_details' project.project_id %}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrftoken,  // Include the CSRF token if required
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ isChecked: isChecked }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+                // Handle the response data here
+            });
+        });
+    </script> -->
+</body>
+
+</html>

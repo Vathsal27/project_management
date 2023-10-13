@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    
+    <!-- <form action="" method="post">
+        {% csrf_token %}
+        {% for items in data %}
+            Project ID: {{items.project_id}}
+            <br>
+            Visits: {{items.visits}}
+            <br>
+            <button type="submit" name="project_id" value="{{items.project_id}}">+</button>
+            <br>
+            <br>
+        {% endfor %} -->
+
+        {% for items in data %}
+            <li>
+                <a href="{% url 'project_details' items.project_id%}">
+                    {{items.project_title}}
+                </a>
+                <br>
+                Project ID: {{items.project_id}}
+                <br>
+                Project visits: {{items.visits}}
+                <br>
+                {% if items.status == True %}
+                    Team Status: Present
+                {% else %}
+                    Team Status: Not Present
+                {% endif %}
+                <br>
+                <br>
+            </li>
+        {% endfor %}
+    </form>
+</body>
+</html>
