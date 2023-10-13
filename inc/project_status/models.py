@@ -7,6 +7,4 @@ class Project(models.Model):
     status = models.BooleanField()
     visits = models.IntegerField()
     team_presence = models.BooleanField()
-
-    def __str__(self):
-        return self.project_title
+    room_allocation = models.CharField(max_length=10, default="--null--")

@@ -23,8 +23,11 @@ def project_details(request, project_id):
         is_checked = request.POST.get('status') == 'on'
         if is_checked:
             project.status = True
-        else:
-            project.status = False
+        
+        if request.POST.get('is_present') == 'on':
+            project.team_presence = True
+        if request.POST.get('not_present') == 'on':
+            project.team_presence = False
 
         project.save()
         return redirect("home")

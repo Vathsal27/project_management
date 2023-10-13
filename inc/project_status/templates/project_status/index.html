@@ -30,10 +30,18 @@
                 Project visits: {{items.visits}}
                 <br>
                 {% if items.status == True %}
-                    Team Status: Present
+                    Team Status: Reported
                 {% else %}
-                    Team Status: Not Present
+                    Team Status: Not Reported
                 {% endif %}
+                <br>
+                {% if items.team_presence == True %}
+                    Presence: Available
+                {% else %}
+                    Presence: Unavailable
+                {% endif %}
+                <br>
+                Room no.: {{items.room_allocation}}
                 <br>
                 <br>
             </li>
