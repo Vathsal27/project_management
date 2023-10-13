@@ -1,6 +1,4 @@
-import re
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, Http404
 from .models import Project
 
 # Create your views here.
