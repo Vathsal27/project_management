@@ -24,7 +24,8 @@ def project_details(request, project_id):
         
         if request.POST.get('is_present') == 'on':
             project.team_presence = True
-        if request.POST.get('not_present') == 'on':
+        # if request.POST.get('not_present') == 'on':
+        else:
             project.team_presence = False
 
         project.save()

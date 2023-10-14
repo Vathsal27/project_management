@@ -38,14 +38,20 @@
         {% endif %}
         <li>
             Present:
-            <input type="checkbox" name="is_present" id="">
-        </li>
-        <li>
-            Not Present:
-            <input type="checkbox" name="not_present" id="">
+            <input type="checkbox" name="is_present" id="is_present">
         </li>
         <button type="submit" name="submit" id="sendData">Submit</button>
     </form>
+
+    <script>
+        {% if project.status == True %}
+            document.getElementById('status').disabled = true;
+            document.getElementById('status').checked = true;
+        {% endif %}
+        {% if project.team_presence == True %}
+            document.getElementById('is_present').checked = true;
+        {% endif %}
+    </script>
 </body>
 
 </html>
