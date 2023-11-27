@@ -17,7 +17,7 @@ def project_details(request, project_id):
             project.visits += 1
         if (request.POST.get("project_visit_sub")):
             if project.visits == 0:
-                project.visits = 0;
+                project.visits = 0
             else:
                 project.visits -= 1
 
@@ -27,7 +27,6 @@ def project_details(request, project_id):
         
         if request.POST.get('is_present') == 'on':
             project.team_presence = True
-        # if request.POST.get('not_present') == 'on':
         else:
             project.team_presence = False
 
