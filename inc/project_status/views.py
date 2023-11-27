@@ -16,7 +16,10 @@ def project_details(request, project_id):
         if (request.POST.get("project_visit_add")):
             project.visits += 1
         if (request.POST.get("project_visit_sub")):
-            project.visits -= 1
+            if project.visits == 0:
+                project.visits = 0;
+            else:
+                project.visits -= 1
 
         is_checked = request.POST.get('status') == 'on'
         if is_checked:
