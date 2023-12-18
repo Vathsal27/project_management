@@ -26,10 +26,10 @@
             <h1>-</h1>
         </button>
         <br>
-        Report Status
-        <input type="checkbox" name="status" id="status">
-        <br>
         <hr>
+        Report Status
+        <input type="checkbox" name="report_status" id="report_status">
+        <br>
         {% if project.team_presence == True %}
         Team Status: Available
         {% else %}
@@ -44,8 +44,8 @@
 
     <script>
         {% if project.status == True %}
-            document.getElementById('status').disabled = true;
-            document.getElementById('status').checked = true;
+            document.getElementById('report_status').disabled = true;
+            document.getElementById('report_status').checked = true;
         {% endif %}
         {% if project.team_presence == True %}
             document.getElementById('is_present').checked = true;

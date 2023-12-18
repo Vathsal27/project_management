@@ -21,7 +21,7 @@ def project_details(request, project_id):
             else:
                 project.visits -= 1
 
-        is_checked = request.POST.get('status') == 'on'
+        is_checked = request.POST.get('report_status') == 'on'
         if is_checked:
             project.status = True
         
